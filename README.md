@@ -52,15 +52,23 @@
 
 # Инструкция по проверке
 Для загрузки требуемых библиотек выполните команды:
-    go get github.com/adverax/echo
-    go get github.com/nfnt/resize
-    go get github.com/oliamb/cutter
-  
-Для компиляции выполните команду 
-    go build
+```bush
+go get github.com/adverax/echo
+go get github.com/nfnt/resize
+go get github.com/oliamb/cutter
+```
+ 
+Для компиляции выполните команду
+```bush 
+go build
+```    
 
-Для запуска сервера выполните команду 
-    ./repo
+Для запуска сервера выполните команду
+```bush 
+./repo
+```
      
 Сервер работает по следующему адресу: localhost:8080. Запросы к нему можно слать через wget. Например:
-    curl -X POST -d 'name=test.jpg&url=https://www.infoniac.ru/upload/medialibrary/409/4099172ff56fa1e8d0a35b52bf908726.jpg' http://localhost:8080/upload
+```bush
+curl -X POST -d 'name=test.jpg&url=https://www.infoniac.ru/upload/medialibrary/409/4099172ff56fa1e8d0a35b52bf908726.jpg' http://localhost:8080/upload
+```
