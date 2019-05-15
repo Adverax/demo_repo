@@ -16,6 +16,8 @@
 - Dockerfile и docker-compose.yml, которые позволяют поднять приложение единой docker-compose up командой.
 - CI интеграция (Travis CI, Circle CI, другие).
 
+Тестовое задание должно быть предоставлено в виде ссылки на публичный репозиторий (GitHub, BitBucket, GitLab), содержащий исходный код приложения и необходимые инструкции по сборке и запуску.
+ 
 # API
 Прием multipart/form-data запросов необходимо направлять в POST localhost/upload. При этом требуются следующие параметры:
 * name - название сохраняемого файла.
@@ -48,8 +50,17 @@
 
 Для упрощения проверки, я поместил в каталог уже скомпилированный бинарный файл. 
 
-К сожалению я с CI/DI не работал вообще, поэтому его я не использовал.
-
 # Инструкция по проверке
-Для запуска сервера выполните команду ./repo. Сервер работает по следующему адресу: localhost:8080. Запросы к нему можно слать через wget. Например:
-curl -X POST -d 'name=test.jpg&url=https://www.infoniac.ru/upload/medialibrary/409/4099172ff56fa1e8d0a35b52bf908726.jpg' http://localhost:8080/upload
+Для загрузки требуемых библиотек выполните команды:
+    go get github.com/adverax/echo
+    go get github.com/nfnt/resize
+    go get github.com/oliamb/cutter
+  
+Для компиляции выполните команду 
+    go build
+
+Для запуска сервера выполните команду 
+    ./repo
+     
+Сервер работает по следующему адресу: localhost:8080. Запросы к нему можно слать через wget. Например:
+    curl -X POST -d 'name=test.jpg&url=https://www.infoniac.ru/upload/medialibrary/409/4099172ff56fa1e8d0a35b52bf908726.jpg' http://localhost:8080/upload
